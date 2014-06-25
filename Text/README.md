@@ -9,3 +9,5 @@ Text
     f('technicolor dreamcoat')
     # 3 'c', 1 ' '
     ```
+
+**Reverse a String** - Enter a string and the program will reverse it and print it out.
