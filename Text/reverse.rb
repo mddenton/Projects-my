@@ -6,4 +6,4 @@ string = gets.chomp
 word = ""
 chars = string.each_char.to_a
 chars.size.times{word << chars.pop}
-print "You say #{string}, I say #{word} "
+puts "You say #{string}, I say #{word} "
