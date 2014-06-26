@@ -10,11 +10,15 @@ def letter_count(str)
 
   end
 
-  max_char = counts.group_by{ |k, v| v }.max.last.map{ |r| r[0] }.min.chr('UTF-8')
-  min_char = counts.group_by{ |k, v| v }.min.last.map{ |r| r[0] }.min.chr('UTF-8')
+  letter_counts = counts.group_by{ |k, v| v }
+  max_char_count = letter_counts.max
+  min_char_count = letter_counts.min
+  
+  max_char = max_char_count.last.map{ |r| r[0] }.min.chr('UTF-8')
+  min_char = min_char_count.last.map{ |r| r[0] }.min.chr('UTF-8')
 
-  max_count = counts.fetch(counts.group_by{ |k, v| v }.max.last.map{ |r| r[0] }.min)
-  min_count = counts.fetch(counts.group_by{ |k, v| v }.min.last.map{ |r| r[0] }.min)
+  max_count = counts.fetch(max_char_count.last.map{ |r| r[0] }.min)
+  min_count = counts.fetch(min_char_count.last.map{ |r| r[0] }.min)
 
   print "(#{max_count} '#{max_char}', #{min_count} '#{min_char}' )"
 
