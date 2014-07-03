@@ -1,3 +1,5 @@
+# python v. 3.3.2
+
 import random
 
 def genSuit():
@@ -47,19 +49,20 @@ def hand():
     card1 = drawCard()
     card2 = drawCard()
     drawTwo = value(card1) + value(card2)
-    card3 = drawCard()
-    drawThree = value(card1) + value(card2) + value(card3)
 
-    print ("first card", card1, ", second card: ", card2, sep=" ")
+    print ("first card: ", card1, ", second card: ", card2, sep='')
     if drawTwo == 21:
         print ("Blackjack...a Natural!")
     elif drawTwo <= 16:
-        card3
-        print ("third card: ", card3, sep=" ")
-    elif drawThree == 21:
-        print ("Blackjack!")
+        card3 = drawCard()
+        drawThree = value(card1) + value(card2) + value(card3)
+        print ("third card: ", card3, sep='')
+        if drawThree == 21:
+            print ("Blackjack on third card!")
+        else:
+            print ("sorry, ", drawThree, " is not 21")
     else:
-        print ("you lose")
+            print ("sorry, ", drawTwo, " is not 21")
 
 def theGame():
     hand()
