@@ -11,3 +11,7 @@ Text
     ```
 
 **Reverse a String** - Enter a string and the program will reverse it and print it out.
+
+**Word Extractor** - Extract text from document to output list of unique words contained therein.
+
+**Caesar Cipher** - Input a string along with the user's desired number of letter shifts. Replace each plaintext letter with a letter a fixed number of places down the alphabet. For example with a shift of three, an E in the plaintext becomes H in the ciphertext.
